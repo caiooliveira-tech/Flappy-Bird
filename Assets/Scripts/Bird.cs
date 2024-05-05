@@ -5,13 +5,16 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
    Rigidbody2D fisica;
+   [SerializeField]
+   private float forca = 3;
     // Update is called once per frame
 
     private void Awake(){
         this.fisica = this.GetComponent<Rigidbody2D>();
     }
     void Update()
-    {
+    {   
+
         if(Input.GetMouseButtonDown(0))
         {
             this.Impulsionar();
@@ -19,6 +22,6 @@ public class Bird : MonoBehaviour
     }
 
     void Impulsionar(){
-        this.fisica.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+        this.fisica.AddForce(Vector2.up * this.forca, ForceMode2D.Impulse);
     }
 }
