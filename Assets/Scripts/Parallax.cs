@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Piso : MonoBehaviour
+public class Parallax : MonoBehaviour
 {
     [SerializeField]
     private float velocidade = 0.6f;
