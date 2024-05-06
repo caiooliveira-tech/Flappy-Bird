@@ -21,7 +21,9 @@ public class Bird : MonoBehaviour
         }
     }
 
-    void Impulsionar(){
+    void Impulsionar()
+    {
+        this.fisica.velocity = Vector2.zero;
         this.fisica.AddForce(Vector2.up * this.forca, ForceMode2D.Impulse);
     }
 }
