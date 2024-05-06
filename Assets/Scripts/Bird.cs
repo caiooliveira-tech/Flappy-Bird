@@ -8,12 +8,22 @@ public class Bird : MonoBehaviour
    [SerializeField]
    private float forca;
    private Diretor diretor;
+   private Vector3 posicaoInicial;
     // Update is called once per frame
 
+
+
     private void Awake(){
+        this.posicaoInicial = this.transform.position;
         this.fisica = this.GetComponent<Rigidbody2D>();
+     
+    }
+
+      private void Start()
+    {
         this.diretor = GameObject.FindObjectOfType<Diretor>();
     }
+
     void Update()
     {   
 
@@ -27,6 +37,12 @@ public class Bird : MonoBehaviour
     {
         this.fisica.velocity = Vector2.zero;
         this.fisica.AddForce(Vector2.up * this.forca, ForceMode2D.Impulse);
+    }
+
+       public void Reiniciar()
+    {
+        this.transform.position = this.posicaoInicial;
+        this.fisica.simulated = true;
     }
 
     private void OnCollisionEnter2D(Collision2D colisao)
