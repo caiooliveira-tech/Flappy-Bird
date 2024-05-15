@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+    [SerializeField]
+    private float velocidade = 3;
+
    //cria a variavel fisica do tipo Rigidbody
    Rigidbody2D fisica;
     
@@ -26,6 +29,6 @@ public class Bird : MonoBehaviour
     //método que impulsiona nosso pássaro
     private void Impulsionar(){
     //adiciona a variável física e o método AddForce, adicionando uma força para cima do tipo impulso
-        this.fisica.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+        this.fisica.AddForce(Vector2.up * velocidade, ForceMode2D.Impulse);
     }
 }
