@@ -2,30 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstaculo : MonoBehaviour {
+public class Obstaculo : MonoBehaviour
+{
     [SerializeField]
     private float velocidade = 0.6f;
-    [SerializeField]
-    private float variacaoDaPosicaoY;
 
+    [SerializeField]
+    private float variacaoY;
     private void Awake()
     {
-        this.transform.Translate(Vector3.up * Random.Range(-variacaoDaPosicaoY, variacaoDaPosicaoY));
+        this.transform.Translate(Vector3.up * Random.Range(-variacaoY,variacaoY));
     }
 
-    private void Update () 
+    // Update is called once per frame
+    void Update()
     {
-        this.transform.Translate(Vector3.left * this.velocidade * Time.deltaTime);
-       
-	}
-
-    private void OnTriggerEnter2D(Collider2D outro)
-    {
-        this.Destruir();
-    }
-
-    public void Destruir()
-    {
-        Destroy(this.gameObject);
+        this.transform.Translate(Vector3.left * velocidade * Time.deltaTime);
+        
     }
 }
