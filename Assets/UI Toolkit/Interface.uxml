@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/button.uss?fileID=7433441132597879392&amp;guid=4fde784bbe6231d4c9314f119e0b65df&amp;type=3#button" />
+    <ui:VisualElement style="flex-grow: initial; background-color: rgb(37, 71, 231); width: 83px; height: 63px; display: flex; visibility: visible; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-left-color: rgba(233, 23, 23, 0); border-right-color: rgba(233, 23, 23, 0); border-top-color: rgba(233, 23, 23, 0); border-bottom-color: rgba(233, 23, 23, 0); opacity: 1; -unity-slice-top: 0; justify-content: center; align-self: center; margin-top: 23px;">
+        <ui:Label tabindex="-1" text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Pontos" class="botao-teste" />
+    </ui:VisualElement>
+</ui:UXML>
