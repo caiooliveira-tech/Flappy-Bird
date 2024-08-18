@@ -6,7 +6,10 @@ public class Bird : MonoBehaviour
 {
     [SerializeField]
     private float velocidade = 3;
+    private Vector3 posicaoInicial;
 
+    private Diretor diretor;
+    
    //cria a variavel fisica do tipo Rigidbody
    Rigidbody2D fisica;
     
@@ -14,7 +17,12 @@ public class Bird : MonoBehaviour
     private void Awake(){
     //adiciona à variavel física o componente RigidBody daquele objeto ativo no momento
         this.fisica = this.GetComponent<Rigidbody2D>();
+        this.posicaoInicial = this.transform.position;
     }
+    private void Start(){
+        this.diretor = GameObject.FindObjectOfType<Diretor>();
+    }
+
     //métodos private somente nossa classe pode acessar
     private void Update()
     {
@@ -28,7 +36,16 @@ public class Bird : MonoBehaviour
     }
     //método que impulsiona nosso pássaro
     private void Impulsionar(){
+        this.fisica.velocity = Vector2.zero;
     //adiciona a variável física e o método AddForce, adicionando uma força para cima do tipo impulso
         this.fisica.AddForce(Vector2.up * velocidade, ForceMode2D.Impulse);
+    }
+     private void OnCollisionEnter2D(Collision2D colision){
+        this.fisica.simulated = false;
+        this.diretor.FinalizarJogo();
+    }
+    public void Reiniciar(){
+        this.transform.position = this.posicaoInicial;
+        this.fisica.simulated = true;
     }
 }
